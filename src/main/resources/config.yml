@@ -1,0 +1,5 @@
+# graylog gelf的配置
+gelf-host: 'localhost'
+gelf-port: 12201
+# 捕获日志 输出时使用的logger name
+logger-name: 'easylog'

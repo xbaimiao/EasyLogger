@@ -7,6 +7,17 @@ import org.slf4j.Logger
 @Suppress("unused")
 class EasyLogger : EasyPlugin() {
 
+    companion object {
+        @JvmStatic
+        val api by lazy {
+            object : EasyLoggerAPI {
+                override fun getLogger(name: String): Logger {
+                    return LogConfigurator.getLogger(name)
+                }
+            }
+        }
+    }
+
     lateinit var rootLogger: Logger
 
     override fun enable() {
